@@ -1,5 +1,5 @@
 ---
-title: Low Salt Marsh Habitats Release More Carbon in Response to Warming, a New Study Finds 
+title: Marsh Habitats Release More Carbon in Response to Warming 
 publishDate: 2022-11-14 00:00:00
 img: /assets/Salt-Marsh.jpg
 img_alt: ""

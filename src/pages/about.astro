@@ -6,11 +6,14 @@ import Hero from '../components/Hero.astro';
 ---
 
 <BaseLayout title="About | Hannah Loss" description="About Jeanine White Lorem Ipsum">
-	<div class="stack gap-20">
-		<main class="wrapper about">
+	<div class=" gap-20">
+
+	
+
 			<Hero
 				title="About"
 				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				
 			>
 				<!-- <img
 					width="1553"
@@ -18,43 +21,50 @@ import Hero from '../components/Hero.astro';
 					src=""
 					alt="Hannah at work"
 				/> -->
-			</Hero>
+				</Hero>
+			
+		
+				<main class="about-wrapper">
+		
+				
+			
 
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
+	
+				<h2 class="section-title">Experience</h2>
+				<div class="">
 					
 			
-					<p>
-						Hannah Loss is a journalist based in New York City and Boston with interests in ecology, infrastructure and agriculture. She is a graduate student at New York University’s Science, Health & Environmental Reporting Program. Previously, she worked in science documentary and radio production and science conference programming. She studied environmental studies and English at Tufts University. 
-					</p>
 					
+				
 				</div>
-			</section>
-			<section>
+			
+		
+			
 				<h2 class="section-title">Education</h2>
 				<div class="content">
-					<p>
-						New York University
-					<p>	Master of Arts - MA - Science, Health & Environmental Reporting, 2021 - 2022 </p>
+					
+					<strong>New York University </strong>
+					<br>
+						M.A. in Science, Health & Environmental Reporting 
+						
+					 
 			
-						</p>
-						<p>
-
-						</p>
-
-						<p> 
-							Tufts University 
-							</p>
-							<p> 	Bachelor’s Degree - BA - Environmental Studies; English; Communication & Media Studies </p>
+					<br>
+					<br>
+							
+						
+					<strong>Tufts University </strong>
+					<br>
+					BA in Environmental Studies and English
 				</div>
-			</section>
-			<section>
+			
+		
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
 					<p>	Audio editing (Adobe Audition, Hindenburg, ProTools); Video Editing (Adobe Premiere); CMS Management (Wordpress); MailChimp </p>
 				</div>
-			</section>
+		
+			
 		</main>
 
 		<ContactCTA />
@@ -63,9 +73,7 @@ import Hero from '../components/Hero.astro';
 
 <style>
 	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
+	
 	}
 
 	img {
@@ -74,22 +82,44 @@ import Hero from '../components/Hero.astro';
 		box-shadow: var(--shadow-md);
 	}
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+
 
 	.section-title {
 		grid-column-start: 1;
 		font-size: var(--text-xl);
 		color: var(--gray-0);
+		padding-left: 0.5rem;
 	}
 
-	.content {
-		grid-column: 2 / 4;
+	.about-wrapper {
+		margin-top: 2rem;
+display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
 	}
+
+
+	header {
+  grid-area: header;
+}
+
+article {
+  grid-area: content;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+footer {
+  grid-area: footer;
+}
+
+	
 
 	.content :global(a) {
 		text-decoration: 1px solid underline transparent;
@@ -101,6 +131,8 @@ import Hero from '../components/Hero.astro';
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
 	}
+
+	
 
 	@media (min-width: 50em) {
 		.about {

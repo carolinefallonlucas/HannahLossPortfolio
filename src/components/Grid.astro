@@ -16,7 +16,7 @@ const { variant } = Astro.props;
 		grid-auto-rows: 1fr;
 		gap: 1rem;
 		list-style: none;
-		padding: 2rem;
+		padding: 0;
 	}
 
 	.grid.small {
@@ -52,8 +52,10 @@ const { variant } = Astro.props;
 		}
 
 		.grid.small {
-			display: grid;
-			gap: 1rem;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 2rem;
 		}
 
 		.grid.small > :global(*) {
