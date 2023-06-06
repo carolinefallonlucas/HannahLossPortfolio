@@ -1,26 +1,33 @@
 ---
-import Icon, { Props as IconProps } from './Icon.astro';
-import ThemeToggle from './ThemeToggle.astro';
+import Icon, { Props as IconProps } from "./Icon.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'About', href: '/about' },
-	{ label: 'Work', href: '/work' },
+	{ label: "Home", href: "/" },
+	{ label: "About", href: "/about" },
+	{ label: "Work", href: "/work" },
 
-,
+	,
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
-	{ label: 'Email', href: 'mailto:hannahloss.win@gmail.com', icon: 'email-logo' },	
-	{ label: 'Twitter', href: 'https://twitter.com/flossy_loss', icon: 'twitter-logo' },
+const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
+	{
+		label: "Email",
+		href: "mailto:hannahloss.win@gmail.com",
+		icon: "email-logo",
+	},
+	{
+		label: "Twitter",
+		href: "https://twitter.com/flossy_loss",
+		icon: "twitter-logo",
+	},
 
 	/** add more social media links here*/
 	/** follow this format */
-	
 
-,
+	,
 ];
 ---
 
@@ -28,8 +35,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	<div class="menu-header">
 		<a href="/" class="site-title">
 			HL
-			<Icon icon="pencil" color="var(--accent-dark)" size="1.2em" /> 
-
+			<Icon icon="pencil" color="var(--accent-dark)" size="1.2em" />
 		</a>
 		<menu-button>
 			<template>
@@ -48,11 +54,14 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 						<a
 							aria-current={Astro.url.pathname === href}
 							class:list={[
-								'link',
+								"link",
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== "/" &&
+											Astro.url.pathname.startsWith(
+												href
+											)),
 								},
 							]}
 							href={href}
@@ -88,33 +97,37 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 			super();
 
 			// Inject menu toggle button when JS runs.
-			this.appendChild(this.querySelector('template')!.content.cloneNode(true));
-			const btn = this.querySelector('button')!;
+			this.appendChild(
+				this.querySelector("template")!.content.cloneNode(true)
+			);
+			const btn = this.querySelector("button")!;
 
 			// Hide menu (shown by default to support no-JS browsers).
-			const menu = document.getElementById('menu-content')!;
+			const menu = document.getElementById("menu-content")!;
 			menu.hidden = true;
 
 			/** Set whether the menu is currently expanded or collapsed. */
 			const setExpanded = (expand: boolean) => {
-				btn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+				btn.setAttribute("aria-expanded", expand ? "true" : "false");
 				menu.hidden = !expand;
 			};
 
 			// Toggle menu visibility when the menu button is clicked.
-			btn.addEventListener('click', () => setExpanded(menu.hidden));
+			btn.addEventListener("click", () => setExpanded(menu.hidden));
 
 			// Hide menu button for large screens.
-			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
+			const handleViewports = (
+				e: MediaQueryList | MediaQueryListEvent
+			) => {
 				setExpanded(e.matches);
 				btn.hidden = e.matches;
 			};
-			const mediaQueries = window.matchMedia('(min-width: 50em)');
+			const mediaQueries = window.matchMedia("(min-width: 50em)");
 			handleViewports(mediaQueries);
-			mediaQueries.addEventListener('change', handleViewports);
+			mediaQueries.addEventListener("change", handleViewports);
 		}
 	}
-	customElements.define('menu-button', MenuButton);
+	customElements.define("menu-button", MenuButton);
 </script>
 
 <style>
@@ -136,24 +149,23 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		display: flex;
 		gap: 0.8rem;
 		align-items: center;
-		line-height:1.1 ;
+		line-height: 1.1;
 		color: var(--gray-0);
-		font-size:1rem;
+		font-size: 1rem;
 	}
 	.menu-button {
 		position: relative;
 		display: flex;
 		border: 0;
-		border-radius: .4rem;
+		border-radius: 0.4rem;
 		padding: 0.5rem;
 		font-size: 1.5rem;
 		color: var(--gray-0);
 		background: radial-gradient(var(--gray-999), var(--gray-800) 150%);
 		box-shadow: var(--shadow-sm);
 	}
-	
 
-	.menu-button[aria-expanded='true'] {
+	.menu-button[aria-expanded="true"] {
 		color: var(--gray-0);
 		background: linear-gradient(180deg, var(--gray-800), transparent),
 			radial-gradient(var(--gray-999), var(--gray-800) 150%);
@@ -166,8 +178,8 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	.menu-button::before {
 		position: absolute;
 		inset: -1px;
-		content: '';
-	
+		content: "";
+
 		z-index: -1;
 	}
 
@@ -253,7 +265,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		}
 
 		.site-title {
-			color:var(--accent-light);
+			color: var(--accent-light);
 			font-size: var(--text-sm);
 		}
 
@@ -275,7 +287,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		.nav-items::before {
 			position: absolute;
 			inset: -1px;
-			content: '';
+			content: "";
 			background: var(--gradient-stroke);
 			border-radius: 999rem;
 			z-index: -1;
@@ -284,7 +296,8 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		.link {
 			padding: 0.5rem 1rem;
 			border-radius: 999rem;
-			transition: color var(--theme-transition), background-color var(--theme-transition);
+			transition: color var(--theme-transition),
+				background-color var(--theme-transition);
 			text-decoration: none;
 		}
 
@@ -292,7 +305,6 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		.link:focus {
 			color: var(--gray-100);
 			background-color: var(--accent-subtle-overlay);
-
 		}
 
 		.link.active {

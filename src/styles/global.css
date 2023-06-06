@@ -2,62 +2,58 @@
 @font-face {
 	font-family: "Diatype Variable";
 	src: url("/fonts/ABCDiatypeVariable-Trial.woff2") format("woff2-variations"),
-	     url('/fonts/ABCDiatypeVariable-Trial.woff') format("woff-variations"), 
-	     url('/fonts/ABCDiatypeVariable-Trial.ttf') format("truetype-variations");
-  }
+		url('/fonts/ABCDiatypeVariable-Trial.woff') format("woff-variations"),
+		url('/fonts/ABCDiatypeVariable-Trial.ttf') format("truetype-variations");
+}
 
-  @font-face {
+@font-face {
 	font-family: "Diatype";
 	font-weight: normal;
 	src: url("/fonts/ABCDiatypeRegular-Trial.woff") format("woff"),
-  }
+}
+
+/* Colors */
+:root {
+
+
 
 	/* Colors */
-	:root {
+	--gray-0: #090b11;
+	--gray-50: #141925;
+	--gray-100: #283044;
+	--gray-200: #3d4663;
+	--gray-300: #505d84;
+	--gray-400: #6474a2;
+	--gray-500: #8490b5;
+	--gray-600: #a3acc8;
+	--gray-700: #e6e2e98d;
+	--gray-800: #e3e6ee;
+	--gray-900: #e6e2e98d;
+	--gray-999-basis: 0, 0%, 100%;
+	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
+	--gray-999: #ffffff;
 
+	--accent-light: hsla(0, 7%, 79%, 0.893);
+	--accent-regular: black;
+	--accent-dark: black;
+	--accent-overlay: hsla(283, 5%, 73%, 0.33);
+	--accent-subtle-overlay: var(--accent-overlay);
+	--accent-text-over: var(--gray-999);
 
-
-		/* Colors */
-		--gray-0: #090b11;
-		--gray-50: #141925;
-		--gray-100: #283044;
-		--gray-200: #3d4663;
-		--gray-300: #505d84;
-		--gray-400: #6474a2;
-		--gray-500: #8490b5;
-		--gray-600: #a3acc8;
-		--gray-700: #e6e2e98d;
-		--gray-800: #e3e6ee;
-		--gray-900: #e6e2e98d;
-		--gray-999-basis: 0, 0%, 100%;
-		--gray-999_40: hsla(var(--gray-999-basis), 0.4);
-		--gray-999: #ffffff;
-	
-		--accent-light: hsla(0, 0%, 60%, 0.553);
-		--accent-regular: black;
-		--accent-dark: black;
-		--accent-overlay: hsla(283, 5%, 73%, 0.33);
-		--accent-subtle-overlay: var(--accent-overlay);
-		--accent-text-over: var(--gray-999);
-	
-		--link-color: var(--accent-regular);
+	--link-color: var(--accent-regular);
 	/* Gradients */
 	--gradient-stop-1: var(--accent-light);
 	--gradient-stop-2: var(--accent-regular);
 	--gradient-stop-3: var(--accent-dark);
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
-	--gradient-accent: linear-gradient(
-		150deg,
-		var(--gradient-stop-1),
-		var(--gradient-stop-2),
-		var(--gradient-stop-3)
-	);
-	--gradient-accent-orange: linear-gradient(
-		150deg,
-		#ca7879,
-		var(--accent-regular),
-		var(--accent-dark)
-	);
+	--gradient-accent: linear-gradient(150deg,
+			var(--gradient-stop-1),
+			var(--gradient-stop-2),
+			var(--gradient-stop-3));
+	--gradient-accent-orange: linear-gradient(150deg,
+			#ca7879,
+			var(--accent-regular),
+			var(--accent-dark));
 	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
 	/* Shadows */
@@ -89,7 +85,7 @@
 	--theme-transition: 0.2s ease-in-out;
 
 
-	
+
 }
 
 :root.theme-dark {
@@ -107,7 +103,7 @@
 	--gray-999-basis: hsla(0, 31%, 1%);
 	--gray-999: #090b11;
 
-	--accent-light: #b1b1b1 ;
+	--accent-light: #b1b1b1;
 	--accent-regular: #e1e1e1;
 	--accent-dark: #1c0056;
 	--accent-overlay: hsla(0, 0%, 61%, 0.667);
@@ -118,12 +114,10 @@
 
 	--gradient-stop-1: #f8f8f8;
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
-	--gradient-accent-orange: linear-gradient(
-		150deg,
-		#8b8b8b,
-		var(--accent-regular),
-		var(--accent-light)
-	);
+	--gradient-accent-orange: linear-gradient(150deg,
+			#8b8b8b,
+			var(--accent-regular),
+			var(--accent-light));
 	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
 
 	--shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
@@ -190,7 +184,7 @@ h1 {
 	line-height: 1.2;
 	color: var(--gray-0);
 	font-stretch: 80%;
-	}
+}
 
 h2 {
 	font-family: 'Diatype Variable', 'Diatype';
@@ -199,7 +193,7 @@ h2 {
 	color: var(--gray-0);
 	font-size: 1.9rem;
 	line-height: 1.1;
-	    letter-spacing: 0.01em;
+	letter-spacing: 0.01em;
 	font-style: normal;
 	font-weight: 700;
 }
@@ -245,24 +239,31 @@ h5 {
 .gap-2 {
 	gap: 0.5rem;
 }
+
 .gap-4 {
 	gap: 1rem;
 }
+
 .gap-8 {
 	gap: 2rem;
 }
+
 .gap-10 {
 	gap: 2.5rem;
 }
+
 .gap-15 {
 	gap: 3.75rem;
 }
+
 .gap-20 {
 	gap: 5rem;
 }
+
 .gap-30 {
 	gap: 7.5rem;
 }
+
 .gap-48 {
 	gap: 12rem;
 }
@@ -271,24 +272,31 @@ h5 {
 	.lg\:gap-2 {
 		gap: 0.5rem;
 	}
+
 	.lg\:gap-4 {
 		gap: 1rem;
 	}
+
 	.lg\:gap-8 {
 		gap: 2rem;
 	}
+
 	.lg\:gap-10 {
 		gap: 2.5rem;
 	}
+
 	.lg\:gap-15 {
 		gap: 3.75rem;
 	}
+
 	.lg\:gap-20 {
 		gap: 5rem;
 	}
+
 	.lg\:gap-30 {
 		gap: 7.5rem;
 	}
+
 	.lg\:gap-48 {
 		gap: 12rem;
 	}
