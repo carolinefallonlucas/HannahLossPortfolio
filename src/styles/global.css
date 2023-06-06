@@ -33,7 +33,7 @@
 		--gray-999_40: hsla(var(--gray-999-basis), 0.4);
 		--gray-999: #ffffff;
 	
-		--accent-light: hsla(240, 9%, 98%, 0.553);
+		--accent-light: hsla(0, 0%, 60%, 0.553);
 		--accent-regular: black;
 		--accent-dark: black;
 		--accent-overlay: hsla(283, 5%, 73%, 0.33);
@@ -114,7 +114,7 @@
 	--accent-subtle-overlay: hwb(0 100% 0% / 0.538);
 	--accent-text-over: var(--gray-0);
 
-	--link-color: var(black);
+	--link-color: var(--accent-light);
 
 	--gradient-stop-1: #f8f8f8;
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
