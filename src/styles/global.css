@@ -177,7 +177,7 @@ h3,
 h4,
 h5 {
 	line-height: 1.1;
-	color: black;
+	color: var(--gray-0);
 }
 
 h1 {
@@ -188,7 +188,7 @@ h1 {
 	margin: 0;
 	font-size: 10.3vmin;
 	line-height: 1.2;
-	color: rgba(0, 0, 0, 1);
+	color: var(--gray-0);
 	font-stretch: 80%;
 	}
 
@@ -196,7 +196,7 @@ h2 {
 	font-family: 'Diatype Variable', 'Diatype';
 	padding: 0;
 	margin: 0;
-	color: rgba(0, 0, 0, 0.85);
+	color: var(--gray-0);
 	font-size: 1.9rem;
 	line-height: 1.1;
 	    letter-spacing: 0.01em;
