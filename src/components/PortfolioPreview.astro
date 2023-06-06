@@ -1,23 +1,28 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-	project: CollectionEntry<'work'>;
+	project: CollectionEntry<"work">;
 }
 
 const { data, slug } = Astro.props.project;
 ---
 
-<a class="card" href={`/work/${slug}`}>
+<a class="card" href={data.href} target="_blank">
 	<span class="title">{data.title}</span>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+	<img
+		src={data.img}
+		alt={data.img_alt || ""}
+		loading="lazy"
+		decoding="async"
+	/>
 </a>
 
 <style>
 	.card {
 		display: grid;
 		grid-template: auto 1fr / auto 1fr;
-		height: 11rem;
+		height: 8rem;
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
 		overflow: hidden;
