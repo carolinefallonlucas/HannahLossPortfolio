@@ -1,11 +1,10 @@
 ---
-title: Aging Primate 
-publishDate: 2022-09-22 00:00:00
-img: /assets/Aging-Primates.jpeg
+title: Preserving History Before It's Lost to Climate Change 
+publishDate: 2023-07-10 00:00:00
+img: /assets/7-Gables.jpeg
 img_alt: ""
 description: |
-href: "https://scienceline.org/2022/08/aging-primates/"
+href: "https://www.wgbh.org/news/local/2023-07-10/house-of-the-seven-gables-races-to-preserve-its-story-before-its-lost-to-climate-change"
 
 
 ---
-
